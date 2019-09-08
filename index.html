@@ -1,3 +1,12 @@
+<!-- 
+  The following bugs were encoutered
+  1. The styles gave some error.
+  2. If I commented them, the script gives an error
+  3. Clicking the link to this error on the dev tools displays the script file without its content
+  4. Instead, the html is what I see
+ -->
+
+
 <html lang="en">
 
 <head>
@@ -6,102 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>success-failure page</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-  <style>
-    body {
-      background-color: #eee;
-      font-family: "Montserrat", "Avenir";
-    }
-
-    .switch {
-      position: absolute;
-      left: 68%;
-      top: 3%;
-      border: none;
-      background-color: orange;
-      border-radius: 1em;
-      padding: 1em 2em;
-      color: white;
-      outline: none;
-    }
-
-    .switch:active {
-      background-color: darkorange;
-    }
-
-    .card {
-      margin: 0 auto;
-      width: 30vw;
-      background-color: #fff;
-      height: 100%;
-    }
-
-    .icon {
-      width: 100%;
-      height: 20vh;
-      padding-bottom: 25vh;
-      padding-top: 4vh;
-      text-align: center;
-      font-size:4rem;
-      color: #05c905;
-    }
-
-    .info {
-      text-align: center;
-    }
-
-    .heading {
-      font-size: 3vw;
-      color: #05c905;
-
-    }
-
-    .action {
-      border: none;
-      background-color: #05c905;
-      border-radius: 1em;
-      padding: 1em 4em;
-      color: white;
-      outline: none;
-      margin-top: 8vh;
-      font-size: 1em;
-    }
-
-    @media (max-width:1000px) {
-      .card {width: 40vw}
-
-      .icon {height: 25vh}
-
-      .heading {font-size: 4vw}
-
-      .switch {left: 74%}
-
-      .icon{font-size: 4rem}
-    }
-    @media (max-width:700px) {
-      .card {width: 60vw}
-
-      .heading {font-size: 6vw}
-
-      .switch {left: 84%}
-
-      .icon{font-size: 3.5rem}
-
-    }
-    @media (max-width:400px) {
-      .card {width: 95vw}
-
-      .icon {height: 25vh}
-
-      .heading {font-size: 10vw}
-
-      .switch {left: 72%; padding: 1em 1.2em;}
-
-      .icon{font-size: 3.8rem;}
-    }
-    #checkscirc {
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -116,37 +30,7 @@
       <button class="action">Continue</button>
     </div>
   </div>
-  <script>
-    const $ = node => document.querySelector(node);
-    const heading = $('.heading');
-    const action = $('.action');
-    const tog = $('.switch');
-    const text = $('.text');
-    const chkcirc = $('#checkcirc');
-    const icon = $('.icon');
-
-    tog.onclick = () => {
-      // const toggle = (node, property, first, second) => node.property === first ? node.property = second:node.property = first;
-      // toggle(heading, 'textContent', 'Awesome', 'Ooops');
-      heading.textContent === 'Awesome' ? heading.textContent = 'Ooops' : heading.textContent = 'Awesome';
-      heading.style.color === 'red' ? heading.style.color = 'rgb(5, 201, 5)' : heading.style.color = 'red';
-      text.textContent === 'Your application has been sent successfully' ? text.textContent = 'Something went wrong, please try again' : text.textContent = 'Your application has been sent successfully';
-      action.style.backgroundColor === 'red' ? action.style.backgroundColor = 'rgb(5, 201, 5)' : action.style.backgroundColor = 'red';
-      action.textContent === 'Continue' ? action.textContent = 'Try Again' : action.textContent = 'Continue';
-      tog.textContent === 'Failure' ? tog.textContent = 'Success' : tog.textContent = 'Failure';
-      if (Array.from(chkcirc.classList).includes('fa-check-circle')){
-        chkcirc.classList.remove('fa-check-circle');
-        chkcirc.classList.add('fa-times-circle');
-        icon.style.color = 'red';
-      }
-      else {
-        chkcirc.classList.add('fa-check-circle');
-        chkcirc.classList.remove('fa-times-circle');
-        icon.style.color = '#05c905';
-      }
-    }
-
-  </script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
